@@ -29,8 +29,8 @@ import com.google.gson.Gson;
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
-	private static final String MOVIMIENTOS_URL = "http://localhost:8080/movimientos";
-	private static final String RECAUDOS_URL = "http://localhost:8080/recaudos";
+	private static final String MOVIMIENTOS_URL = "http://localhost:9092/movimientos";
+	private static final String RECAUDOS_URL = "http://localhost:9094/recaudos";
 	private static final Integer VALOR_MINUTO = 90;
 	
 	private ResponseEntity<String> putHttp(String url, JSONObject jsonObject, HttpMethod method) {

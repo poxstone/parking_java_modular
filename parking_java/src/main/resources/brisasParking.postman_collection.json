@@ -8,13 +8,59 @@
 	},
 	"item": [
 		{
+			"name": "admin_parking",
+			"description": "",
+			"item": [
+				{
+					"name": "registrar_ingreso",
+					"request": {
+						"url": "http://localhost:9090/admin/registrarEntrada",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id_operador\":3, \"id_cliente\":2, \"placa\":\"xzy-987\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "registrar_salida",
+					"request": {
+						"url": "http://localhost:9090/admin/registrarSalida",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id_movimiento\":2}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "cliente",
 			"description": "",
 			"item": [
 				{
 					"name": "cliente_anadir",
 					"request": {
-						"url": "http://localhost:8080/clientes/add",
+						"url": "http://localhost:9091/clientes/add",
 						"method": "PUT",
 						"header": [
 							{
@@ -34,7 +80,7 @@
 				{
 					"name": "cliente_editar",
 					"request": {
-						"url": "http://localhost:8080/clientes/edit/5",
+						"url": "http://localhost:9091/clientes/edit/5",
 						"method": "POST",
 						"header": [
 							{
@@ -54,7 +100,7 @@
 				{
 					"name": "cliente_listar",
 					"request": {
-						"url": "http://localhost:8080/clientes/list",
+						"url": "http://localhost:9091/clientes/list",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -68,7 +114,7 @@
 				{
 					"name": "cliente_id",
 					"request": {
-						"url": "http://localhost:8080/clientes/getById/5",
+						"url": "http://localhost:9091/clientes/getById/5",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -82,195 +128,7 @@
 				{
 					"name": "cliente_eliminar",
 					"request": {
-						"url": "http://localhost:8080/clientes/del/5",
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "operador",
-			"description": "",
-			"item": [
-				{
-					"name": "operador_anadir",
-					"request": {
-						"url": "http://localhost:8080/operadores/add",
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"nombre\": \"operador1_nombre\", \"apellido\": \"operador1_apellido\"}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "operador_editar",
-					"request": {
-						"url": "http://localhost:8080/operadores/edit/4",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"nombre\": \"operador1_nombre_mod\", \"apellido\": \"operador1_apellido_mod\"}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "operador_listar",
-					"request": {
-						"url": "http://localhost:8080/operadores/list",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "operador_id",
-					"request": {
-						"url": "http://localhost:8080/operadores/getById/4",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "operador_eliminar",
-					"request": {
-						"url": "http://localhost:8080/operadores/del/4",
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "vehiculo",
-			"description": "",
-			"item": [
-				{
-					"name": "vehiculo_anadir",
-					"request": {
-						"url": "http://localhost:8080/vehiculos/add",
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"placa\":\"plc-555\", \"tipo_vehiculo\": \"hasbag\", \"id_cliente\": 2}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "vehiculo_editar",
-					"request": {
-						"url": "http://localhost:8080/vehiculos/edit/plc-555",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"tipo_vehiculo\": \"bus\", \"id_cliente\": 2}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "vehiculo_listar",
-					"request": {
-						"url": "http://localhost:8080/vehiculos/list",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "anadir cliente"
-					},
-					"response": []
-				},
-				{
-					"name": "vehiculo_id",
-					"request": {
-						"url": "http://localhost:8080/vehiculos/getByPlaca/plc-555",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "vehiculo_eliminar",
-					"request": {
-						"url": "http://localhost:8080/vehiculos/del/plc-555",
+						"url": "http://localhost:9091/clientes/del/5",
 						"method": "DELETE",
 						"header": [
 							{
@@ -350,7 +208,7 @@
 				{
 					"name": "movimiento_id",
 					"request": {
-						"url": "http://localhost:8080/movimientos/getByIdMovimiento/2",
+						"url": "http://localhost:9092/movimientos/getByIdMovimiento/3",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -364,7 +222,101 @@
 				{
 					"name": "movimiento_eliminar",
 					"request": {
-						"url": "http://localhost:8080/movimientos/del/2",
+						"url": "http://localhost:9092/movimientos/del/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "operador",
+			"description": "",
+			"item": [
+				{
+					"name": "operador_anadir",
+					"request": {
+						"url": "http://localhost:9093/operadores/add",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"operador1_nombre\", \"apellido\": \"operador1_apellido\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "operador_editar",
+					"request": {
+						"url": "http://localhost:9093/operadores/edit/4",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"operador1_nombre_mod\", \"apellido\": \"operador1_apellido_mod\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "operador_listar",
+					"request": {
+						"url": "http://localhost:9093/operadores/list",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "operador_id",
+					"request": {
+						"url": "http://localhost:9093/operadores/getById/4",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "operador_eliminar",
+					"request": {
+						"url": "http://localhost:9093/operadores/del/4",
 						"method": "DELETE",
 						"header": [
 							{
@@ -390,7 +342,7 @@
 				{
 					"name": "recaudo_anadir",
 					"request": {
-						"url": "http://localhost:8080/recaudos/add",
+						"url": "http://localhost:9094/recaudos/add",
 						"method": "PUT",
 						"header": [
 							{
@@ -410,7 +362,7 @@
 				{
 					"name": "recaudo_editar",
 					"request": {
-						"url": "http://localhost:8080/recaudos/edit/2",
+						"url": "http://localhost:9094/recaudos/edit/2",
 						"method": "POST",
 						"header": [
 							{
@@ -430,7 +382,7 @@
 				{
 					"name": "recaudo_listar",
 					"request": {
-						"url": "http://localhost:8080/recaudos/list",
+						"url": "http://localhost:9094/recaudos/list",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -444,7 +396,7 @@
 				{
 					"name": "recaudo_id",
 					"request": {
-						"url": "http://localhost:8080/recaudos/getByRecaudoId/5",
+						"url": "http://localhost:9094/recaudos/getByRecaudoId/2",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -458,7 +410,7 @@
 				{
 					"name": "recaudo_eliminar",
 					"request": {
-						"url": "http://localhost:8080/recaudos/del/5",
+						"url": "http://localhost:9094/recaudos/del/2",
 						"method": "DELETE",
 						"header": [
 							{
@@ -478,13 +430,13 @@
 			]
 		},
 		{
-			"name": "admin_parking",
+			"name": "vehiculo",
 			"description": "",
 			"item": [
 				{
-					"name": "registrar_ingreso",
+					"name": "vehiculo_anadir",
 					"request": {
-						"url": "http://localhost:8080/admin/registrarEntrada",
+						"url": "http://localhost:9095/vehiculos/add",
 						"method": "PUT",
 						"header": [
 							{
@@ -495,16 +447,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"id_operador\":3, \"id_cliente\":2, \"placa\":\"xzy-987\"}"
+							"raw": "{\"placa\":\"plc-555\", \"tipo_vehiculo\": \"hasbag\", \"id_cliente\": 2}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "registrar_salida",
+					"name": "vehiculo_editar",
 					"request": {
-						"url": "http://localhost:8080/admin/registrarSalida",
+						"url": "http://localhost:9095/vehiculos/edit/plc-555",
 						"method": "POST",
 						"header": [
 							{
@@ -515,7 +467,55 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"id_movimiento\":3}"
+							"raw": "{\"tipo_vehiculo\": \"bus\", \"id_cliente\": 2}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "vehiculo_listar",
+					"request": {
+						"url": "http://localhost:9095/vehiculos/list",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "anadir cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "vehiculo_id",
+					"request": {
+						"url": "http://localhost:9095/vehiculos/getByPlaca/plc-555",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "vehiculo_eliminar",
+					"request": {
+						"url": "http://localhost:9095/vehiculos/del/plc-555",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
 						},
 						"description": ""
 					},
@@ -526,7 +526,7 @@
 		{
 			"name": "initial_populate_all",
 			"request": {
-				"url": "http://localhost:8080/populate/all",
+				"url": "http://localhost:9090/populate/all",
 				"method": "GET",
 				"header": [],
 				"body": {
